@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <title>Surat Penawaran</title>
+  </head>
+  <body>
+    <div id="full-page" class="container">
+      <div class="kop">
+        <div class="row">
+          <div class="col-8">
+            <h3>CV.CIPTA INDAH KONSTRUKSI</h3>
+          </div>
+          <div class="col-4">
+            <p>Jl. Arteri Supadio No1 6, Kubu Raya, Kalbar 78391</p>
+            <p>+625616711824</p>
+            <p>bwinterior.info@gmail.com</p>
+          </div>
+        </div>
+        <div class="dropdown-divider"></div>
+      </div>
+      <!-- END KOP -->
+
+      <div class="isi">
+        <div class="row">
+          <div class="col-12">
+            <h4>SURAT PENAWARAN</h4>
+            <br />
+            <table>
+              <tr>
+                <td style="width:100px">Nomor</td>
+                <td>: 1</td>
+              </tr>
+              <tr>
+                <td style="width:100px">Lamp.</td>
+                <td>: 1</td>
+              </tr>
+              <tr>
+                <td style="width:100px">Hal</td>
+                <td>: 1</td>
+              </tr>
+            </table>
+
+            <br />
+            <br />
+            <!-- space -->
+            <p class="mb-0">Kepada Yth.</p>
+            <p class="mb-0">PT. None</p>
+            <p>Di-Tempat</p>
+            <br />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <p>Dengan hormat,</p>
+            <p>
+              Sebelumnya kami mengucapkan terimakasih atas berkenannya
+              [Bapak/Ibu] memberi kesempatan kepada kami untuk memperkenalkan
+              [CV. CIPTA INDAH KONSTRUKSI]. Kami adalah perusahaan yang bergerak
+              dibidang konstruksi. Mulai dari jasa design hingga produksi
+              furniture.
+            </p>
+            <p>
+              Bidang usaha kami mencakup pekerjaan pembangunan perkantoran,
+              cafe, rumah tinggal, apartment, hotel, bangunan publik, bangunan
+              komersil, serta memberikan layanan konsultasi dibidang konstruksi
+              interior, sipil, elektrikal dan plumbing kepada pelanggan kami.
+              Tujuan kami adalah memberikan layanan dan solusi konstruksi
+              terbaik sehingga dapat memberikan kepuasan kepada pelanggan kami.
+            </p>
+
+            <p>
+              Berdasarkan hasil [.......................] pada Tanggal
+              [........................], berikut kami sampaikan rincian
+              penawaran Pekerjaan
+              […......................0.........................][Terlampir
+            </p>
+            <p>
+              Demikian surat penawaran ini kami buat untuk kepentingan bisnis
+              antara pihak [Bapak/Ibu] dengan pihak kami, atas perhatian dan
+              kerja sama [Bapak/Ibu] kami sampaikan terima kasih.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- END ISI -->
+
+      <div class="footer">
+        <div class="row">
+          <div class="col-4 offset-8 text-center">
+            <p>Hormat kami,</p>
+            <br />
+            <br />
+            <p class="mb-0">Jonen</p>
+            <p>CV. Cipta Indah Konstruksi</p>
+          </div>
+        </div>
+      </div>
+      <!-- END FOOTER -->
+    </div>
+    <div>
+      <a href="javascript:genPDF()">Generate</a>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+    <script type="text/javascript">
+      function genPDF() {
+        html2canvas(document.getElementById("full-page"), {
+          onrendered: function(canvas) {
+            var img = canvas.toDataURL("imgae/png");
+            var doc = new jsPDF();
+
+            doc.addImage(img, "JPEG", 10, 10);
+
+            doc.save("Test.pdf");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
